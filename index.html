@@ -13,6 +13,39 @@
     <link href="index.css" rel="stylesheet" />
   </head>
   <body>
+    <script>
+      var rn = new Date();
+      var cryptexDate = new Date(1579869000000);
+      var difference = cryptexDate.getTime() - rn.getTime();
+
+      var daysDifference = Math.floor(difference / 1000 / 60 / 60 / 24);
+      difference -= daysDifference * 1000 * 60 * 60 * 24;
+
+      var hoursDifference = Math.floor(difference / 1000 / 60 / 60);
+      difference -= hoursDifference * 1000 * 60 * 60;
+
+      var minutesDifference = Math.floor(difference / 1000 / 60);
+      difference -= minutesDifference * 1000 * 60;
+
+      var secondsDifference = Math.floor(difference / 1000);
+      document.documentElement.style.setProperty(
+        "--timer-day",
+        "'" + daysDifference + "'"
+      );
+      document.documentElement.style.setProperty(
+        "--timer-hours",
+        "'" + hoursDifference + "'"
+      );
+      document.documentElement.style.setProperty(
+        "--timer-minutes",
+        "'" + minutesDifference + "'"
+      );
+      document.documentElement.style.setProperty(
+        "--timer-seconds",
+        "'" + secondsDifference + "'"
+      );
+      requestAnimationFrame(updateTime);
+    </script>
     <div class="animated fadeInDown clock-container title-text">
       <div id="text">CRYPTEX 2020</div>
       <div id="container">
@@ -61,6 +94,37 @@
 
     <script src="https://cdn.auth0.com/js/auth0-spa-js/1.2/auth0-spa-js.production.js"></script>
     <script>
+      var rn = new Date();
+      var cryptexDate = new Date(1579869000000);
+      var difference = cryptexDate.getTime() - rn.getTime();
+
+      var daysDifference = Math.floor(difference / 1000 / 60 / 60 / 24);
+      difference -= daysDifference * 1000 * 60 * 60 * 24;
+
+      var hoursDifference = Math.floor(difference / 1000 / 60 / 60);
+      difference -= hoursDifference * 1000 * 60 * 60;
+
+      var minutesDifference = Math.floor(difference / 1000 / 60);
+      difference -= minutesDifference * 1000 * 60;
+
+      var secondsDifference = Math.floor(difference / 1000);
+      document.documentElement.style.setProperty(
+        "--timer-day",
+        "'" + daysDifference + "'"
+      );
+      document.documentElement.style.setProperty(
+        "--timer-hours",
+        "'" + hoursDifference + "'"
+      );
+      document.documentElement.style.setProperty(
+        "--timer-minutes",
+        "'" + minutesDifference + "'"
+      );
+      document.documentElement.style.setProperty(
+        "--timer-seconds",
+        "'" + secondsDifference + "'"
+      );
+      requestAnimationFrame(updateTime);
       let auth0 = null;
       const login = async () => {
         await auth0.loginWithRedirect({
@@ -74,10 +138,38 @@
           client_id: "nl87FH8EoPD4EFqJMYBIJQBr107BDlMZ"
         });
       };
-      document.addEventListener("DOMContentLoaded", () =>
-        requestAnimationFrame(updateTime)
-      );
       window.onload = async () => {
+        var rn = new Date();
+        var cryptexDate = new Date(1579869000000);
+        var difference = cryptexDate.getTime() - rn.getTime();
+
+        var daysDifference = Math.floor(difference / 1000 / 60 / 60 / 24);
+        difference -= daysDifference * 1000 * 60 * 60 * 24;
+
+        var hoursDifference = Math.floor(difference / 1000 / 60 / 60);
+        difference -= hoursDifference * 1000 * 60 * 60;
+
+        var minutesDifference = Math.floor(difference / 1000 / 60);
+        difference -= minutesDifference * 1000 * 60;
+
+        var secondsDifference = Math.floor(difference / 1000);
+        document.documentElement.style.setProperty(
+          "--timer-day",
+          "'" + daysDifference + "'"
+        );
+        document.documentElement.style.setProperty(
+          "--timer-hours",
+          "'" + hoursDifference + "'"
+        );
+        document.documentElement.style.setProperty(
+          "--timer-minutes",
+          "'" + minutesDifference + "'"
+        );
+        document.documentElement.style.setProperty(
+          "--timer-seconds",
+          "'" + secondsDifference + "'"
+        );
+        requestAnimationFrame(updateTime);
         await configureClient();
 
         updateUI();
